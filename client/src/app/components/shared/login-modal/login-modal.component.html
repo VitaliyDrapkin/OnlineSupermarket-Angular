@@ -1,0 +1,53 @@
+<div class="modalWindow">
+  <div class="main" *ngIf="cartLogic.isLastActionsInit">
+    <h1 class="headline">Welcome to the "B-Online" store!</h1>
+
+    <div *ngIf="cartLogic.isCartExist">
+      <div class="body" *ngIf="cartLogic.isCartFill">
+        You have open cart from {{ cartLogic.cartCreateDate | date }} cost
+        <b>{{ cartLogic.cartTotalPrice | number }}$</b>
+      </div>
+
+      <div
+        class="body"
+        *ngIf="!cartLogic.isCartFill && cartLogic.isLastPurchaseExist"
+      >
+        Your last purchase was on {{ cartLogic.lastPurchaseDate | date }} cost
+        <b>{{ lastPurchaseTotalPrice | number }}$</b>
+      </div>
+
+      <div
+        class="body"
+        *ngIf="!cartLogic.isCartFill && !cartLogic.isLastPurchaseExist"
+      >
+        You haven't made any purchases yet
+      </div>
+    </div>
+
+    <div *ngIf="!cartLogic.isCartExist">
+      <div class="body" *ngIf="cartLogic.isLastPurchaseExist">
+        Your last purchase was on {{ cartLogic.lastPurchaseDate | date }} cost
+        <b>{{ cartLogic.lastPurchaseTotalPrice | number }}$</b>
+      </div>
+
+      <div class="body" *ngIf="!cartLogic.isLastPurchaseExist">
+        This is your first time in our store.
+      </div>
+    </div>
+
+    <div
+      class="buttons"
+      *ngIf="cartLogic.isCartExist && cartLogic.isCartFill; else elseBTNS"
+    >
+      <button class="startBTN" (click)="openNewCart()">Open new cart</button>
+
+      <button class="resumeBTN" (click)="goToShop()">Resume last cart</button>
+    </div>
+
+    <ng-template #elseBTNS>
+      <div class="buttons">
+        <button class="startBTN" (click)="goToShop()">Start shopping</button>
+      </div></ng-template
+    >
+  </div>
+</div>

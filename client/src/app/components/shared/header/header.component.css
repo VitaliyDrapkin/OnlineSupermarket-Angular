@@ -1,0 +1,57 @@
+.header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 999;
+}
+
+.top,
+.bottom {
+  display: flex;
+}
+.top {
+  padding: 10px;
+  background-color: #004258;
+  box-shadow: 10px 10px #004258;
+}
+
+.bottom {
+  max-height: 3.6rem;
+  background-color: rgb(230, 227, 227);
+  box-shadow: 3px 3px 5px rgb(230, 227, 227);
+}
+.logo img {
+  margin-left: 30px;
+  width: 9rem;
+}
+
+.search {
+  flex: 1;
+  margin-left: 5rem;
+}
+
+.logout {
+  margin-right: 40px;
+  color: black;
+  font-size: 1.6rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.logout button {
+  margin-left: 10px;
+  border-radius: 7px;
+  font-size: 1.2rem;
+  padding: 3px 10px;
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+  font-weight: bold;
+  color: #f84c4c;
+}
+
+.categories {
+  margin-top: 0.3rem;
+}

@@ -1,0 +1,9 @@
+<div class="categoryItem" (click)="productsLogic.chooseCategory(category.id)">
+  <div class="border"></div>
+  <div
+    class="name"
+    [ngClass]="{ active: productsLogic.activeCategoryId === category.id }"
+  >
+    {{ category.name }}
+  </div>
+</div>

@@ -1,0 +1,11 @@
+runtime: nodejs
+env: flex
+
+env_variables:
+  SQL_USER: root
+  SQL_PASSWORD: 35.239.168.199
+  SQL_DATABASE: vacations
+  INSTANCE_CONNECTION_NAME: vitaliyproject:us-central1:vitaliyproject
+
+beta_settings:
+  cloud_sql_instances: vitaliyproject:us-central1:vitaliyproject

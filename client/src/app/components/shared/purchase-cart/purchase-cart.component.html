@@ -1,0 +1,45 @@
+<div class="purchase-cart">
+  <div class="headline">My cart</div>
+  <div class="search">
+    <span>Search : </span>
+    <input
+      type="text"
+      placeholder="Search"
+      [(ngModel)]="purchaseLogic.searchValue"
+    />
+  </div>
+  <div class="cart">
+    <div class="cartItems">
+      <div
+        class="cartItem"
+        *ngFor="
+          let cartItem of cartLogic.cartItems
+            | purchaseCartSearch: purchaseLogic.searchValue
+        "
+      >
+        <div class="image">
+          <img src="{{ cartItem.image }}" alt="" />
+        </div>
+        <div class="description">
+          <div class="name">Product : {{ cartItem.name }}</div>
+          <div class="quantity">Amount : {{ cartItem.amount }} pcs</div>
+          <div class="totalPrice">
+            Total price : {{ cartItem.totalPrice | number }}$
+          </div>
+        </div>
+      </div>
+      <div
+        class="noItems"
+        *ngIf="
+          (cartLogic.cartItems | purchaseCartSearch: purchaseLogic.searchValue)
+            .length === 0
+        "
+      >
+        No product matches in your cart
+      </div>
+    </div>
+    <div class="cartTotalPrice">
+      Cart total price : {{ cartLogic.getTotalPrice() | number }} $
+    </div>
+  </div>
+</div>

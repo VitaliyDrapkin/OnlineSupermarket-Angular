@@ -1,0 +1,21 @@
+<div class="mainPage">
+  <app-header [page]="'main'"></app-header>
+  <div class="main">
+    <div class="content" [@cartOpen]="cartLogic.isCartWindowOpen">
+      <div class="nothing" *ngIf="productLogic.products.length == 0">
+        No results were found for your search.
+      </div>
+      <app-product-item
+        class="productItem"
+        *ngFor="let p of productLogic.products"
+        [product]="p"
+        [page]="'main'"
+      ></app-product-item>
+
+      <div class="empty"></div>
+      <div class="empty"></div>
+      <div class="empty"></div>
+      <div class="empty"></div>
+    </div>
+  </div>
+</div>

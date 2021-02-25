@@ -1,0 +1,58 @@
+<div class="addField">
+  <div class="name">
+    <span>Product Name : </span>
+    <input
+      type="text"
+      placeholder="Name"
+      maxlength="25"
+      [(ngModel)]="adminLogic.name"
+    />
+  </div>
+  <div class="img">
+    <span>Product image : </span>
+    <input
+      type="file"
+      name="file"
+      multiple="false"
+      accept="image/*"
+      (change)="changeFile($event.target.files)"
+    />
+  </div>
+  <div class="category">
+    <span>Category : </span>
+    <div class="custom-select" style="width: 200px">
+      <select
+        class="categoryDropBox"
+        name="categories"
+        [(ngModel)]="adminLogic.category"
+      >
+        <option
+          *ngFor="let category of productLogic.categories"
+          [value]="category.id"
+        >
+          {{ category.name }}
+        </option>
+      </select>
+    </div>
+  </div>
+  <div class="price">
+    <span>Price $ : </span>
+    <input
+      [(ngModel)]="adminLogic.price"
+      type="number"
+      min="1"
+      max="9999"
+      onkeydown="return event.keyCode !== 69
+       && event.keyCode !== 187 && event.keyCode !== 189
+       && ( this.value.length < 4 || event.keyCode === 8)"
+    />
+  </div>
+  <div class="error" *ngIf="adminLogic.isError">
+    {{ adminLogic.errorMessage }}
+  </div>
+
+  <div class="btns">
+    <button class="cancel" (click)="adminLogic.cancel()">Cancel</button>
+    <button class="save" (click)="adminLogic.addProduct()">Save</button>
+  </div>
+</div>

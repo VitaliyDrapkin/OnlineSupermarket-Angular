@@ -1,0 +1,107 @@
+<form
+  [formGroup]="registerLogic.secondStepForm"
+  (ngSubmit)="registerLogic.register()"
+>
+  <div class="inputField">
+    <span>Name : </span>
+    <input
+      type="text"
+      placeholder="Name"
+      maxlength="25"
+      formControlName="name"
+      name="firstNme"
+      autocomplete="on"
+    />
+
+    <div
+      class="error"
+      *ngIf="
+        registerLogic.secondStepForm.controls.name.invalid &&
+        registerLogic.secondStepForm.controls.name.touched
+      "
+    >
+      <span *ngIf="registerLogic.secondStepForm.controls.name.errors.required"
+        >You must fill this field</span
+      >
+    </div>
+  </div>
+
+  <div class="inputField">
+    <span>Last name : </span>
+    <input
+      type="text"
+      placeholder="Last name"
+      maxlength="25"
+      formControlName="lastName"
+      name="lastName"
+      autocomplete="on"
+    />
+
+    <div
+      class="error"
+      *ngIf="
+        registerLogic.secondStepForm.controls.lastName.invalid &&
+        registerLogic.secondStepForm.controls.lastName.touched
+      "
+    >
+      <span
+        *ngIf="registerLogic.secondStepForm.controls.lastName.errors.required"
+        >You must fill this field</span
+      >
+    </div>
+  </div>
+
+  <div class="inputField">
+    <span>City : </span>
+    <select id="city" class="categoryDropBox" formControlName="city">
+      <option></option>
+      <option *ngFor="let c of registerLogic.cities">
+        {{ c }}
+      </option>
+    </select>
+
+    <div
+      class="error"
+      *ngIf="
+        registerLogic.secondStepForm.controls.city.invalid &&
+        registerLogic.secondStepForm.controls.city.touched
+      "
+    >
+      <span *ngIf="registerLogic.secondStepForm.controls.city.errors.required"
+        >You must fill this field</span
+      >
+    </div>
+  </div>
+  <div class="inputField">
+    <span>Street : </span>
+    <input
+      type="text"
+      placeholder="Street"
+      maxlength="30"
+      formControlName="street"
+      name="street"
+      autocomplete="on"
+    />
+
+    <div
+      class="error"
+      *ngIf="
+        registerLogic.secondStepForm.controls.street.invalid &&
+        registerLogic.secondStepForm.controls.street.touched
+      "
+    >
+      <span *ngIf="registerLogic.secondStepForm.controls.street.errors.required"
+        >You must fill this field</span
+      >
+    </div>
+  </div>
+  <div class="toLogin">
+    Already registered? <a [routerLink]="['/login']">Login</a>
+  </div>
+  <div class="btn">
+    <button (click)="registerLogic.firstStep = true">Back</button>
+    <button type="submit" [disabled]="registerLogic.secondStepForm.invalid">
+      Register
+    </button>
+  </div>
+</form>

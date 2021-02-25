@@ -1,0 +1,86 @@
+.cartNav {
+  display: flex;
+  align-items: center;
+  color: #004258;
+  background-color: rgb(214, 214, 214);
+  padding-right: 1rem;
+  position: relative;
+  box-shadow: 3px 3px 3px grey;
+}
+
+.purchaseBTN {
+  padding: 0.8rem 1.3rem;
+  background-color: #d51c4a;
+  color: white;
+  font-weight: bold;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.purchaseDisable {
+  padding: 0.8rem 1.3rem;
+  background-color: grey;
+  color: white;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.purchaseBTN:hover {
+  background-color: #a12443;
+}
+.price {
+  font-size: 1.3rem;
+  margin-left: 1rem;
+}
+span {
+  font-weight: bold;
+}
+
+.mat-icon {
+  font-size: 2.3rem;
+  margin-left: 1rem;
+}
+
+.arrowIconLeft,
+.arrowIconRight {
+  font-size: 3rem;
+  cursor: pointer;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrowIconLeft {
+  padding: 6px 8px 6px 2px;
+}
+
+.arrowIconRight {
+  padding: 6px 2px 6px 8px;
+}
+
+.arrowIconLeft:hover,
+.arrowIconRight:hover {
+  background-color: #00095871;
+  color: white;
+}
+
+.cartIcon {
+  position: relative;
+}
+
+.countCartItems {
+  position: absolute;
+  right: -0.9rem;
+  top: -0.2rem;
+  background-color: red;
+  color: #fff;
+  z-index: 999;
+  border-radius: 50%;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 8px;
+  height: 8px;
+}

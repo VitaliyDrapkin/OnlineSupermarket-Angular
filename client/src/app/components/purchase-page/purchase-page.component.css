@@ -1,0 +1,12 @@
+.body {
+  background-color: #fff;
+  height: 91vh;
+  display: flex;
+  margin: 9vh 3rem;
+}
+
+.cart,
+.order {
+  flex: 1;
+  padding: 1rem;
+}

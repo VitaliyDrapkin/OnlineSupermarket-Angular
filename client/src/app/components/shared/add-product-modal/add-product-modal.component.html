@@ -1,0 +1,35 @@
+<div class="modalWindow">
+  <div class="main">
+    <div class="headline">Add product to cart</div>
+    <div class="body">
+      <div class="img">
+        <img src="{{ product.image }}" alt="" />
+      </div>
+      <div class="description">
+        <div class="name">{{ product.name }}</div>
+        <div class="price">{{ product.price | number }}$</div>
+        <div class="amount">
+          <div
+            class="decrease"
+            (click)="amount = amount - 1"
+            *ngIf="amount > 1; else decreaseDisabled"
+          >
+            -
+          </div>
+          <ng-template #decreaseDisabled>
+            <div class="decreaseDisabled">-</div>
+          </ng-template>
+          <div class="count">{{ amount }}</div>
+          <div class="increase" (click)="amount = amount + 1">+</div>
+        </div>
+        <div class="totalPrice">
+          Total : <span>{{ product.price * amount | number }}$</span>
+        </div>
+      </div>
+    </div>
+    <div class="buttons">
+      <div class="cancel" (click)="cancel()">Cancel</div>
+      <div class="add" (click)="addProductToCart()">Add</div>
+    </div>
+  </div>
+</div>

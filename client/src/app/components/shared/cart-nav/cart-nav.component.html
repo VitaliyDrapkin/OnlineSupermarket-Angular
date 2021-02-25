@@ -1,0 +1,32 @@
+<div class="cartNav">
+  <div
+    class="purchaseBTN"
+    (click)="goToPurchase()"
+    *ngIf="cartLogic.cartItems.length; else purchaseDisable"
+  >
+    Purchase
+  </div>
+  <ng-template #purchaseDisable>
+    <div class="purchaseDisable">Purchase</div></ng-template
+  >
+  <div class="price">
+    Total: <span> {{ cartLogic.getTotalPrice() | number }}$</span>
+  </div>
+  <div class="cartIcon">
+    <div class="countCartItems">{{ cartLogic.cartItems.length }}</div>
+    <mat-icon aria-hidden="false" class="cartIcon">shopping_cart</mat-icon>
+  </div>
+  <div class="switch" (click)="cartLogic.cartWindowSwitch()">
+    <mat-icon
+      aria-hidden="false"
+      class="arrowIconLeft"
+      *ngIf="cartLogic.isCartWindowOpen; else cartWindowClose"
+      >keyboard_arrow_left</mat-icon
+    >
+    <ng-template #cartWindowClose>
+      <mat-icon aria-hidden="false" class="arrowIconRight"
+        >keyboard_arrow_right</mat-icon
+      ></ng-template
+    >
+  </div>
+</div>

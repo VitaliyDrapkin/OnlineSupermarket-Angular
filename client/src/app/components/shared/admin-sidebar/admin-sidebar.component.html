@@ -1,0 +1,17 @@
+<div class="adminSidebar">
+  <div class="headline" *ngIf="adminLogic.mode == 'simple'">Admin page</div>
+  <div class="headline" *ngIf="adminLogic.mode == 'add'">Add product</div>
+  <div class="headline" *ngIf="adminLogic.mode == 'edit'">Edit product</div>
+
+  <div class="simpleField" *ngIf="adminLogic.mode == 'simple'">
+    <button (click)="adminLogic.changeMode('add')">Add product</button>
+  </div>
+
+  <div class="addField" *ngIf="adminLogic.mode == 'add'">
+    <app-admin-add></app-admin-add>
+  </div>
+
+  <div class="editField" *ngIf="adminLogic.mode == 'edit'">
+    <app-admin-edit></app-admin-edit>
+  </div>
+</div>

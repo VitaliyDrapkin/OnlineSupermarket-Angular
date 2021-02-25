@@ -1,0 +1,66 @@
+.cart {
+  position: absolute;
+  background-color: rgb(214, 214, 214);
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  top: 100%;
+  left: 0;
+  right: 0;
+  box-shadow: 3px 3px 3px grey;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.main {
+  max-height: 70vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0 0.4rem 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 0.7rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #004258;
+}
+
+.removeAll {
+  color: #004258;
+  border-bottom: 1px #17181d dashed;
+  padding-bottom: 5px;
+}
+
+.removeAll > div {
+  cursor: pointer;
+  padding: 3px 7px 3px 2px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+}
+.removeAll > div:hover {
+  background-color: rgb(197, 195, 195);
+}
+
+.cartNavPadding {
+  padding-top: 3px;
+}

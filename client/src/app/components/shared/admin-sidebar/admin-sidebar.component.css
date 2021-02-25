@@ -1,0 +1,30 @@
+.adminSidebar {
+  background-color: rgb(214, 214, 214);
+  box-shadow: 3px 3px 3px grey;
+  padding: 0.7rem 0.4rem;
+  width: 21.4rem;
+}
+
+.headline {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #004258;
+  text-align: center;
+  border-bottom: 1px dashed #004258;
+  padding-bottom: 0.7rem;
+}
+
+.simpleField {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.simpleField button {
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  color: white;
+  background-color: #004258;
+  border-radius: 10px;
+  cursor: pointer;
+}

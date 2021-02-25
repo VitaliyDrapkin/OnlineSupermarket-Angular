@@ -1,0 +1,23 @@
+<div class="productItem">
+  <div class="img">
+    <img src="{{ product.image }}" alt="" />
+  </div>
+  <div class="name">{{ product.name }}</div>
+  <div class="price">
+    Price : <span>{{ product.price | number }}$</span>
+  </div>
+  <div class="addBTN">
+    <button (click)="isModalOpen = true" *ngIf="page == 'main'">Add</button>
+    <button
+      (click)="adminLogic.changeMode('edit', product)"
+      *ngIf="page == 'admin'"
+    >
+      Edit
+    </button>
+  </div>
+</div>
+<app-add-product-modal
+  *ngIf="isModalOpen"
+  [product]="product"
+  [cancel]="cancel"
+></app-add-product-modal>

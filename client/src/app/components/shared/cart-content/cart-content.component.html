@@ -1,0 +1,9 @@
+<div class="cartContent">
+  <app-cart-nav
+    *ngIf="!cartLogic.isCartWindowOpen; else cartClosed"
+  ></app-cart-nav>
+  <ng-template #cartClosed>
+      <div class="headline">My cart</div>
+  </ng-template>
+  <app-cart></app-cart>
+</div>

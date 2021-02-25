@@ -1,0 +1,9 @@
+.shopInfo img,
+.shopInfo p {
+  max-width: 23rem;
+  height: auto;
+}
+
+.shopInfo p {
+  font-size: 1.3rem;
+}

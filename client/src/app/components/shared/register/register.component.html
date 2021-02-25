@@ -1,0 +1,9 @@
+<div class="register">
+  <h1>Register</h1>
+  <app-first-step-register
+    *ngIf="registerLogic.firstStep; else secondStep"
+  ></app-first-step-register>
+  <ng-template #secondStep>
+    <app-second-step-register></app-second-step-register>
+  </ng-template>
+</div>

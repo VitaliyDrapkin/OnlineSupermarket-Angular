@@ -1,0 +1,15 @@
+.cartContent {
+  position: relative;
+}
+
+.headline {
+  padding: 0.4rem;
+  width: 21.4rem;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #004258;
+  background-color: rgb(214, 214, 214);
+  position: relative;
+  box-shadow: 3px 3px 3px grey;
+  text-align: center;
+}

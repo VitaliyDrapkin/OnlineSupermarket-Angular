@@ -1,0 +1,73 @@
+<div class="login">
+  <h1>Login</h1>
+
+  <form [formGroup]="loginLogic.form" (ngSubmit)="loginLogic.login()">
+    <div class="inputField">
+      <span>ID : </span>
+      <input
+        type="text"
+        placeholder="ID"
+        maxlength="9"
+        formControlName="id"
+        maxlength="9"
+        name="id"
+        autocomplete="on"
+      />
+
+      <div
+        class="error"
+        *ngIf="
+          loginLogic.form.controls.id.invalid &&
+          loginLogic.form.controls.id.touched
+        "
+      >
+        <span *ngIf="loginLogic.form.controls.id.errors.required"
+          >You must fill this field</span
+        >
+        <span *ngIf="loginLogic.form.controls.id.errors.incorrect">
+          Id Incorrect
+        </span>
+      </div>
+    </div>
+
+    <div class="inputField">
+      <span>Password : </span>
+      <input
+        type="password"
+        placeholder="Password"
+        maxlength="25"
+        formControlName="password"
+        name="password"
+        autocomplete="on"
+      />
+
+      <div
+        class="error"
+        *ngIf="
+          loginLogic.form.controls.password.invalid &&
+          loginLogic.form.controls.password.touched
+        "
+      >
+        <span *ngIf="loginLogic.form.controls.password.errors.required"
+          >You must fill this field</span
+        >
+      </div>
+    </div>
+    <div
+      class="special"
+      *ngIf="
+        loginLogic.form.controls.password.invalid &&
+        loginLogic.form.controls.password.errors.unauthorized
+      "
+    >
+      Invalid User ID or password.
+    </div>
+    <div class="toRegister">
+      Don't have an account ? <a [routerLink]="['/register']">Sign up</a>
+    </div>
+    <div class="btn">
+      <span></span>
+      <button type="submit" [disabled]="loginLogic.form.invalid">Login</button>
+    </div>
+  </form>
+</div>

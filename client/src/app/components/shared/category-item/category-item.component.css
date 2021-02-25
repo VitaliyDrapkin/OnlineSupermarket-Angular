@@ -1,0 +1,25 @@
+.categoryItem {
+  display: flex;
+  font-size: 1rem;
+  align-items: center;
+  font-size: 1.2rem;
+}
+.name {
+  padding: 10px;
+  cursor: pointer;
+}
+.active {
+  color: #048bf3;
+  font-weight: bold;
+}
+.name:hover {
+  background-color: #004258;
+  color: white;
+  border-radius: 5px;
+}
+.border {
+  margin: 0 10px;
+  height: 1.7rem;
+  width: 3px;
+  background-color: #e0e2e9;
+}

@@ -1,0 +1,119 @@
+<div class="purchase-order">
+  <form
+    [formGroup]="purchaseLogic.form"
+    (ngSubmit)="purchaseLogic.makePurchase()"
+  >
+    <div class="formFields">
+      <div class="headline">My order</div>
+      <div class="detailsHeadline">Shipping details :</div>
+      <div class="formItem">
+        <div class="title">City :</div>
+
+        <select
+          id="city"
+          class="dropBox"
+          formControlName="city"
+          (dblclick)="purchaseLogic.autoCompleteCity()"
+        >
+          <option></option>
+          <option *ngFor="let c of registerLogic.cities">
+            {{ c }}
+          </option>
+        </select>
+      </div>
+      <div
+        class="error"
+        *ngIf="
+          purchaseLogic.form.controls.city.invalid &&
+          purchaseLogic.form.controls.city.touched
+        "
+      >
+        You must select city
+      </div>
+      <div class="formItem">
+        <div class="title">Street :</div>
+        <input
+          type="text"
+          maxlength="25"
+          formControlName="street"
+          name="street"
+          placeholder="Street"
+          (dblclick)="purchaseLogic.autoCompleteStreet()"
+        />
+      </div>
+      <div
+        class="error"
+        *ngIf="
+          purchaseLogic.form.controls.street.invalid &&
+          purchaseLogic.form.controls.street.touched
+        "
+      >
+        You must fill street
+      </div>
+      <div class="formItem">
+        <div class="title">Shipping date :</div>
+        <input
+          type="date"
+          formControlName="date"
+          [min]="minDate"
+          [max]="maxDate"
+          name="date"
+          placeholder="Date"
+        />
+      </div>
+      <div
+        class="error"
+        *ngIf="
+          purchaseLogic.form.controls.date.invalid &&
+          purchaseLogic.form.controls.date.touched
+        "
+      >
+        You must fill date
+      </div>
+      <div class="detailsHeadline">Payment :</div>
+      <div class="formItem">
+        <div class="title">Credit card :</div>
+        <input
+          type="text"
+          maxlength="16"
+          formControlName="creditCard"
+          name="creditCard"
+          placeholder="Credit card"
+        />
+      </div>
+      <div
+        class="error"
+        *ngIf="
+          purchaseLogic.form.controls.creditCard.invalid &&
+          purchaseLogic.form.controls.creditCard.touched
+        "
+      >
+        <span *ngIf="purchaseLogic.form.controls.creditCard.errors.required"
+          >You must fill credit card</span
+        >
+        <span *ngIf="purchaseLogic.form.controls.creditCard.errors.incorrect">
+          Credit card Incorrect
+        </span>
+      </div>
+    </div>
+    <div class="btns">
+      <button class="backBtn" type="button" (click)="backToShop()">
+        Back to shop
+      </button>
+      <button
+        type="submit"
+        class="purchaseBtnDisabled"
+        disabled
+        *ngIf="purchaseLogic.form.invalid; else purchaseBTN"
+      >
+        Purchase
+      </button>
+      <ng-template #purchaseBTN>
+        <button type="submit" class="purchaseBtn">Purchase</button>
+      </ng-template>
+    </div>
+  </form>
+</div>
+<app-purchase-modal
+  *ngIf="purchaseLogic.isModalWindowOpen"
+></app-purchase-modal>

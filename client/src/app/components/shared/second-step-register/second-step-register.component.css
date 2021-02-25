@@ -1,0 +1,79 @@
+form {
+  margin-top: 40px;
+}
+input {
+  width: 250px;
+  font-size: 1.2rem;
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+.categoryDropBox {
+  width: 275px;
+  font-size: 1.2rem;
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+.inputField {
+  margin-top: 20px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+form span {
+  width: 5rem;
+}
+
+.toLogin {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 25px;
+}
+
+.toLogin a {
+  color: #1a73e8;
+  text-decoration: none;
+}
+
+.toLogin a:hover {
+  text-decoration: underline;
+}
+.btn {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2.5rem;
+}
+button {
+  font-size: 24px;
+  background-color: #1a73e8;
+  color: white;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 1px 2px 3px rgb(52, 52, 53);
+}
+
+button:hover {
+  background-color: #164ea7;
+}
+
+button:disabled {
+  background-color: gray;
+  cursor: auto;
+}
+.error {
+  position: absolute;
+  top: -0.4rem;
+  left: 27%;
+  font-size: 0.8rem;
+  background-color: #fff;
+  color: red;
+  padding: 0 5px;
+}

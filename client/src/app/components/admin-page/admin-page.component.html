@@ -1,0 +1,21 @@
+<div class="adminPage">
+  <app-header [page]="'admin'"></app-header>
+  <div class="main">
+    <div class="content">
+      <div class="nothing" *ngIf="productLogic.products.length == 0">
+        No results were found for your search.
+      </div>
+      <app-product-item
+        class="productItem"
+        *ngFor="let p of productLogic.products"
+        [product]="p"
+        [page]="'admin'"
+      ></app-product-item>
+
+      <div class="empty"></div>
+      <div class="empty"></div>
+      <div class="empty"></div>
+      <div class="empty"></div>
+    </div>
+  </div>
+</div>

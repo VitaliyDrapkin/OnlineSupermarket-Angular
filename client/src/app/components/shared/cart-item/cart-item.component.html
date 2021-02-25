@@ -1,0 +1,52 @@
+<div
+  class="item"
+  (mouseenter)="isChangeAmountMode = true"
+  (mouseleave)="isChangeAmountMode = false"
+>
+  <div class="left">
+    <img src="{{ cartItem.image }}" alt="" />
+  </div>
+  <div class="center">
+    <div class="productName">{{ cartItem.name }}</div>
+
+    <div class="productPices" *ngIf="!isChangeAmountMode; else changeMode">
+      {{ cartItem.amount }} pcs
+    </div>
+    <ng-template #changeMode>
+      <div class="changeMode">
+        <div
+          class="decrease"
+          *ngIf="cartItem.amount > 1 && !changeDisabled; else decreaseDisabled"
+          (click)="cartLogic.decreaseAmountOfProduct(cartItem.id)"
+        >
+          -
+        </div>
+        <ng-template #decreaseDisabled>
+          <div class="decreaseDisabled">-</div>
+        </ng-template>
+
+        <span> {{ cartItem.amount }}</span>
+
+        <div
+          class="increase"
+          *ngIf="!changeDisabled; else increaseDisabled"
+          (click)="cartLogic.increaseAmountOfProduct(cartItem.id)"
+        >
+          +
+        </div>
+        <ng-template #increaseDisabled>
+          <div class="increaseDisabled">+</div>
+        </ng-template>
+      </div>
+    </ng-template>
+  </div>
+  <div class="right">
+    <div class="remove" (click)="cartLogic.removeCartItemFromCart(cartItem.id)">
+      <mat-icon aria-hidden="false" class="arrowIconRight" class="icon"
+        >delete</mat-icon
+      >
+    </div>
+
+    <div class="price">{{ cartItem.totalPrice | number }}$</div>
+  </div>
+</div>

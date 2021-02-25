@@ -1,0 +1,75 @@
+.name,
+.img,
+.category,
+.price {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #004258;
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px dashed #004258;
+}
+
+.name input {
+  margin-top: 0.7rem;
+  padding: 0.3rem 0.7rem;
+  font-size: 1.3rem;
+  border-radius: 10px;
+  outline: none;
+  border: 1px solid #004258;
+}
+.img input {
+  margin-top: 0.7rem;
+  cursor: pointer;
+  border: 1px solid #a1c6d3;
+  font-size: 1rem;
+}
+
+.price input {
+  margin-top: 0.7rem;
+  padding: 0.2rem 0.5rem;
+  font-size: 1.3rem;
+  border-radius: 10px;
+  outline: none;
+  border: 1px solid #004258;
+}
+
+.categoryDropBox {
+  margin-top: 0.7rem;
+  padding: 0.2rem 0.5rem;
+  font-size: 1.3rem;
+  outline: none;
+  border: 1px solid #004258;
+}
+.btns {
+  margin-top: 0.7rem;
+  display: flex;
+}
+
+.cancel,
+.save {
+  padding: 0.3rem;
+  margin: 0 0.5rem;
+  flex: 1;
+  border-radius: 10px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: #fff;
+  outline: none;
+}
+
+.cancel {
+  background-color: #d51c4a;
+}
+
+.save {
+  background-color: #004258;
+}
+
+.error {
+  margin-top: 0.7rem;
+  color: red;
+}

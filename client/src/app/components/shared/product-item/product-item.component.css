@@ -1,0 +1,44 @@
+.productItem {
+  flex-basis: 200px;
+  flex-grow: 1;
+  height: 100%;
+  position: relative;
+}
+
+.img img {
+  width: 100%;
+  height: 12rem;
+  border-radius: 5px;
+  border: 1px solid white;
+  background-color: white;
+}
+
+.name,
+.price {
+  font-size: 1.6rem;
+  color: #fff;
+  margin-left: 0.5rem;
+  margin-top: 1rem;
+}
+
+.price span {
+  font-weight: bold;
+}
+
+.addBTN {
+  position: absolute;
+  bottom: -0.6rem;
+  right: -0.6rem;
+  justify-content: flex-end;
+  display: flex;
+}
+.addBTN button {
+  font-size: 1.6rem;
+  color: white;
+  padding: 0.2rem 1.2rem;
+  background-color: #d51c4a;
+  border-radius: 10px;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 1px 2px 3px rgb(139, 142, 185);
+}

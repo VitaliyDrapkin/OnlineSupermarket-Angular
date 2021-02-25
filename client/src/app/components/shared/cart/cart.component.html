@@ -1,0 +1,17 @@
+<div class="cart" [@cartWindow]="'start'" *ngIf="cartLogic.isCartWindowOpen">
+  <div class="main">
+    <div class="removeAll" (click)="cartLogic.removeAllCartItems()">
+      <div>
+        <mat-icon aria-hidden="false" class="arrowIconRight"
+          >delete_forever</mat-icon
+        >
+        Remove all
+      </div>
+    </div>
+    <app-cart-item
+      *ngFor="let cItem of cartLogic.cartItems"
+      [cartItem]="cItem"
+    ></app-cart-item>
+  </div>
+  <app-cart-nav class="cartNavPadding"></app-cart-nav>
+</div>

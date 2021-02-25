@@ -1,0 +1,139 @@
+<form
+  [formGroup]="registerLogic.firstStepForm"
+  (ngSubmit)="registerLogic.firstCheck()"
+>
+  <div class="inputField">
+    <span>ID : </span>
+    <input
+      type="text"
+      placeholder="ID"
+      formControlName="id"
+      maxlength="9"
+      name="id"
+      autocomplete="on"
+    />
+
+    <div
+      class="error"
+      *ngIf="
+        registerLogic.firstStepForm.controls.id.invalid &&
+        registerLogic.firstStepForm.controls.id.touched
+      "
+    >
+      <span *ngIf="registerLogic.firstStepForm.controls.id.errors.required"
+        >You must fill this field</span
+      >
+      <span *ngIf="registerLogic.firstStepForm.controls.id.errors.incorrect">
+        Id Incorrect
+      </span>
+      <span *ngIf="registerLogic.firstStepForm.controls.id.errors.serverError">
+        {{ registerLogic.firstStepForm.controls.id.errors.serverError }}
+      </span>
+    </div>
+  </div>
+
+  <div class="inputField">
+    <span>Email : </span>
+    <input
+      type="text"
+      placeholder="Email"
+      formControlName="email"
+      name="email"
+      autocomplete="on"
+    />
+    <div
+      class="error"
+      *ngIf="
+        registerLogic.firstStepForm.controls.email.invalid &&
+        registerLogic.firstStepForm.controls.email.touched
+      "
+    >
+      <span *ngIf="registerLogic.firstStepForm.controls.email.errors.required"
+        >You must fill this field</span
+      >
+      <span *ngIf="registerLogic.firstStepForm.controls.email.errors.email"
+        >Email incorrect</span
+      >
+      <span
+        *ngIf="registerLogic.firstStepForm.controls.email.errors.serverError"
+      >
+        {{ registerLogic.firstStepForm.controls.email.errors.serverError }}
+      </span>
+    </div>
+  </div>
+
+  <div class="inputField">
+    <span>Password : </span>
+    <input
+      type="password"
+      placeholder="Password"
+      formControlName="password"
+      name="password"
+      autocomplete="on"
+    />
+    <div
+      class="error"
+      *ngIf="
+        registerLogic.firstStepForm.controls.password.invalid &&
+        registerLogic.firstStepForm.controls.password.touched
+      "
+    >
+      <span
+        *ngIf="registerLogic.firstStepForm.controls.password.errors.required"
+        >You must fill this field</span
+      >
+      <span></span>
+      <span
+        *ngIf="
+          registerLogic.firstStepForm.controls.password.errors.minlength ||
+          registerLogic.firstStepForm.controls.password.errors.maxlength
+        "
+        >Length must be 6 - 20 characters
+      </span>
+    </div>
+  </div>
+
+  <div class="inputField">
+    <span>Confirm Password : </span>
+    <input
+      type="password"
+      placeholder="Confirm Password"
+      formControlName="confirmPassword"
+      name="password"
+      autocomplete="on"
+    />
+
+    <div
+      class="error"
+      *ngIf="
+        registerLogic.firstStepForm.controls.confirmPassword.invalid &&
+        registerLogic.firstStepForm.controls.confirmPassword.touched
+      "
+    >
+      <span
+        *ngIf="
+          registerLogic.firstStepForm.controls.confirmPassword.errors.required
+        "
+        >You must fill this field</span
+      >
+      <span
+        *ngIf="
+          registerLogic.firstStepForm.controls.confirmPassword.errors
+            .confirmFail
+        "
+        >Passwords do not match
+      </span>
+    </div>
+  </div>
+
+  <div class="toLogin">
+    Already registered? <a [routerLink]="['/login']">Login</a>
+  </div>
+
+  <div class="btn">
+    <span></span>
+    <button type="submit" [disabled]="registerLogic.firstStepForm.invalid">
+      Next
+    </button>
+  </div>
+</form>

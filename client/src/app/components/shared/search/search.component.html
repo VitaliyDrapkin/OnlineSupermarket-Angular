@@ -1,0 +1,15 @@
+<div class="search">
+  <mat-icon
+    aria-hidden="false"
+    aria-label="Example home icon"
+    class="searchIcon"
+    >search</mat-icon
+  >
+
+  <input
+    type="text"
+    placeholder="Search"
+    [(ngModel)]="productLogic.searchValue"
+    (ngModelChange)="productLogic.searchProduct()"
+  />
+</div>

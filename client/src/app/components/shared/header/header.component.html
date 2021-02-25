@@ -1,0 +1,23 @@
+<div class="header">
+  <div class="top">
+    <div class="logo">
+      <img src="../../../../assets/images/logo3.jpg" alt="" />
+    </div>
+    <div class="search"><app-search></app-search></div>
+    <div class="logout">
+      Hello {{ authData.firstName }}
+      <button (click)="loginLogic.logout()">Logout</button>
+    </div>
+  </div>
+  <div class="bottom">
+    <div class="cartNav" *ngIf="page == 'main'">
+      <app-cart-content></app-cart-content>
+    </div>
+    <div class="cartNav" *ngIf="page == 'admin'">
+      <app-admin-sidebar></app-admin-sidebar>
+    </div>
+    <div class="categories">
+      <app-categories></app-categories>
+    </div>
+  </div>
+</div>
